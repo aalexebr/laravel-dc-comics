@@ -13,7 +13,7 @@
                     <input type="text" class="form-control" name="description">
                 </div>
                 <div class="mb-3">
-                    <label for="src" class="form-label">src</label>
+                    <label for="src" class="form-label">image path</label>
                     <input type="text" class="form-control" name="src">
                 </div>
                 <div class="mb-3">
@@ -25,6 +25,7 @@
                     <input type="number" class="form-control" name="price" step=".01">
                 </div>
                 <button type="submit" class="btn btn-primary">Create</button>
+                <button type="reset" class="btn btn-danger">Reset</button>
             </form>
         </div>
     </div>

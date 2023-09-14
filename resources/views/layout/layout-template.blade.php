@@ -9,6 +9,10 @@
 </head>
 <body>
     @include('partials.header-nav')
-    @yield('content')
+    <main class="bg-dark">
+        @yield('content')
+    </main>
+
+    
 </body>
 </html>

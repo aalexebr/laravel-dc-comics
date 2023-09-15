@@ -20,3 +20,4 @@ Route::get('/', function () {
 })->name('home');
 
 Route::resource('comics', ComicsController::class);
+Route::get('/confirm-delete/{x}', [ComicsController::class,'preDelete'])->name('preDelete');

@@ -22,7 +22,7 @@
                         <td>
                             <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">view</a>
                             <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-success">update</a>
-                            <form 
+                            {{-- <form 
                                 action="{{route('comics.destroy',['comic'=>$comic->id])}}" class="d-inline-block" 
                                 method="POST"
                                 onsubmit="return confirm('are you sure?')">
@@ -31,7 +31,8 @@
                                 <button type="submit" class="btn btn-danger">
                                     delete
                                 </button>
-                            </form>
+                            </form> --}}
+                            <a href="{{route('preDelete', ['x'=>$comic->id])}}" class="btn btn-danger">delete</a>
                         </td>
                     </tr>  
                 @endforeach

@@ -90,4 +90,13 @@ class ComicsController extends Controller
         $object->delete();
         return redirect()->route('comics.index');
     }
+
+    public function preDelete(string $id)
+    {
+        $comic = Comic::findorFail($id);
+        $artistArr = explode('!', $comic->artists);
+        $writerArr = explode('!', $comic->writers);
+        // dd($artistArr);
+        return view('admin.deletee',compact('comic','artistArr','writerArr'));
+    }
 }

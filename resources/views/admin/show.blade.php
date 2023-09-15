@@ -12,7 +12,7 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                         description
                                     </button>
                                     </h2>
@@ -24,39 +24,57 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="">
                             <h6>
-                                price:
+                                price: ${{$comic->price}}
                             </h6>
-                            ${{$comic->price}}
                         </div>
-                        <div>
-                            <h6>
-                                artists:
-                            </h6>
-                            <ul>
-                                @foreach ($artistArr as $index => $artist)
-                                    @if ($index != 0)
-                                        <li>
-                                            {{$artist}}
-                                        </li>
-                                    @endif
-                                @endforeach
-                            </ul>
+    
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        arists
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            @foreach ($artistArr as $index => $artist)
+                                                @if ($index != 0)
+                                                    <li>
+                                                        {{$artist}}
+                                                    </li>
+                                                @endif
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <h6>
-                                wtiters:
-                            </h6>
-                            <ul>
-                                @foreach ($writerArr as $index => $writer)
-                                    @if ($index != 0)
-                                        <li>
-                                            {{$writer}}
-                                        </li>
-                                    @endif
-                                @endforeach
-                            </ul>
+                
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        writers
+                                    </button>
+                                    </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            @foreach ($writerArr as $index => $writer)
+                                                @if ($index != 0)
+                                                    <li>
+                                                        {{$writer}}
+                                                    </li>
+                                                @endif
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

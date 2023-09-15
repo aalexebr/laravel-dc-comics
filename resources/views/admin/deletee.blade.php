@@ -3,8 +3,8 @@
     <div class="container  py-4">
         <div class="row justify-content-center">
             <div class="col-auto my-2">
-                <div class="card m-auto py-2 bg-dark-subtle">
-                    <h1 class="text-primary">
+                <div class="card m-auto p-2 bg-dark">
+                    <h1 class="text-warning">
                         ARE YOU SURE YOU WANT TO DELETE FOR EVER?
                     </h1>
                     <form 
@@ -20,8 +20,10 @@
                 </div>
             </div>
         </div>
+
         <div class="row justify-content-center">
-            <div class="col-auto"> 
+            <div class="col-auto">
+                
                 <div class="card m-auto py-2" style="width: 18rem;">
                     <img src="{{$comic->src}}" class="card-img-top" alt="{{$comic->title}}">
                     <div class="card-body">
@@ -30,7 +32,7 @@
                             <div class="accordion" id="accordionExample">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                         description
                                     </button>
                                     </h2>
@@ -42,39 +44,57 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="">
                             <h6>
-                                price:
-                            </h6>
-                            ${{$comic->price}}
+                                price: ${{$comic->price}}
+                            </h6> 
                         </div>
-                        <div>
-                            <h6>
-                                artists:
-                            </h6>
-                            <ul>
-                                @foreach ($artistArr as $index => $artist)
-                                    @if ($index != 0)
-                                        <li>
-                                            {{$artist}}
-                                        </li>
-                                    @endif
-                                @endforeach
-                            </ul>
+    
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        arists
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            @foreach ($artistArr as $index => $artist)
+                                                @if ($index != 0)
+                                                    <li>
+                                                        {{$artist}}
+                                                    </li>
+                                                @endif
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <h6>
-                                wtiters:
-                            </h6>
-                            <ul>
-                                @foreach ($writerArr as $index => $writer)
-                                    @if ($index != 0)
-                                        <li>
-                                            {{$writer}}
-                                        </li>
-                                    @endif
-                                @endforeach
-                            </ul>
+                
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        writers
+                                    </button>
+                                    </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            @foreach ($writerArr as $index => $writer)
+                                                @if ($index != 0)
+                                                    <li>
+                                                        {{$writer}}
+                                                    </li>
+                                                @endif
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

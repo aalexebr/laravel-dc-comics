@@ -49,7 +49,10 @@ class ComicsController extends Controller
     public function show(string $id)
     {
         $comic = Comic::findorFail($id);
-        return view('admin.show',compact('comic'));
+        $artistArr = explode('!', $comic->artists);
+        $writerArr = explode('!', $comic->writers);
+        // dd($artistArr);
+        return view('admin.show',compact('comic','artistArr','writerArr'));
     }
 
     /**

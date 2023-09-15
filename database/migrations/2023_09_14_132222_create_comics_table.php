@@ -17,9 +17,11 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->text('src')->nullable();
             $table->string('series',64)->nullable();
-            $table->float('price',7,2)->nullable();
+            $table->float('price',7,2);
             $table->date('sale_date',32)->nullable();
             $table->string('type',32)->nullable();
+            $table->string('artists',200)->nullable();
+            $table->string('writers',200)->nullable();
             $table->timestamps();
         });
     }

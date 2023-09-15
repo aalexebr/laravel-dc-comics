@@ -2,9 +2,9 @@
 @section('content')
     <div class="container  py-4">
         <div class="row justify-content-center">
-            <div class="col">
+            <div class="col-auto">
                 
-                <div class="card m-auto" style="width: 18rem;">
+                <div class="card m-auto py-2" style="width: 18rem;">
                     <img src="{{$comic->src}}" class="card-img-top" alt="{{$comic->title}}">
                     <div class="card-body">
                         <h5 class="card-title">{{$comic->title}}</h5>
@@ -25,7 +25,38 @@
                             </div>
                         </div>
                         <div class="">
+                            <h6>
+                                price:
+                            </h6>
                             ${{$comic->price}}
+                        </div>
+                        <div>
+                            <h6>
+                                artists:
+                            </h6>
+                            <ul>
+                                @foreach ($artistArr as $index => $artist)
+                                    @if ($index != 0)
+                                        <li>
+                                            {{$artist}}
+                                        </li>
+                                    @endif
+                                @endforeach
+                            </ul>
+                        </div>
+                        <div>
+                            <h6>
+                                wtiters:
+                            </h6>
+                            <ul>
+                                @foreach ($writerArr as $index => $writer)
+                                    @if ($index != 0)
+                                        <li>
+                                            {{$writer}}
+                                        </li>
+                                    @endif
+                                @endforeach
+                            </ul>
                         </div>
                     </div>
                 </div>

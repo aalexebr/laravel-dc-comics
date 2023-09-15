@@ -1,7 +1,7 @@
 @extends('layout.layout-template')
 
 @section('content')
-    <div class="container my-3">
+    <div class="container py-3">
         <table class="table">
             <thead>
             <tr>
@@ -19,7 +19,10 @@
                         <td>{{$comic->title}}</td>
                         <td>{{$comic->series}}</td>
                         <td>${{$comic->price}}</td>
-                        <td><a href="{{route('comics.show', ['comic' => $comic->id])}}">view</a></td>
+                        <td>
+                            <a href="{{route('comics.show', $comic->id)}}">view</a>
+                            <a href="{{route('comics.edit', $comic->id)}}">update</a>
+                        </td>
                     </tr>  
                 @endforeach
             </tbody>

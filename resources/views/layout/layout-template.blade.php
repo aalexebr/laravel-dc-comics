@@ -12,7 +12,5 @@
     <main class="bg-dark">
         @yield('content')
     </main>
-
-    
 </body>
 </html>

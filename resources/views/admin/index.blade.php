@@ -20,8 +20,18 @@
                         <td>{{$comic->series}}</td>
                         <td>${{$comic->price}}</td>
                         <td>
-                            <a href="{{route('comics.show', $comic->id)}}">view</a>
-                            <a href="{{route('comics.edit', $comic->id)}}">update</a>
+                            <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">view</a>
+                            <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-success">update</a>
+                            <form 
+                                action="{{route('comics.destroy',['comic'=>$comic->id])}}" class="d-inline-block" 
+                                method="POST"
+                                onsubmit="return confirm('are you sure?')">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">
+                                    delete
+                                </button>
+                            </form>
                         </td>
                     </tr>  
                 @endforeach

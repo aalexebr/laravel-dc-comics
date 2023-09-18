@@ -35,9 +35,13 @@ class ComicsController extends Controller
             'title'=>'required|max:64',
             'description'=>'nullable',
             'src'=>'nullable',
-            'price'=>'required|decimal:2',
+            'price'=>'required|decimal:0,2|min:0.01',
             'series'=>'nullable|max:64'
-        ]);
+        ],
+        [
+            'price.min'=>'price must be above 0.01'
+        ]
+        );
 
         $formData = $request->all();
         

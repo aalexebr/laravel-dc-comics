@@ -61,8 +61,8 @@ class ComicsController extends Controller
     public function show(string $id)
     {
         $comic = Comic::findorFail($id);
-        $artistArr = explode('!', $comic->artists);
-        $writerArr = explode('!', $comic->writers);
+        $artistArr = explode('|', $comic->artists);
+        $writerArr = explode('|', $comic->writers);
         // dd($artistArr);
         return view('admin.show',compact('comic','artistArr','writerArr'));
     }

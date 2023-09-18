@@ -42,11 +42,9 @@
                                     <div class="accordion-body">
                                         <ul>
                                             @foreach ($artistArr as $index => $artist)
-                                                @if ($index != 0)
-                                                    <li>
-                                                        {{$artist}}
-                                                    </li>
-                                                @endif
+                                                <li>
+                                                    {{$artist}}
+                                                </li>  
                                             @endforeach
                                         </ul>
                                     </div>

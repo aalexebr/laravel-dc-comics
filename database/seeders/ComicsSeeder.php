@@ -24,16 +24,19 @@ class ComicsSeeder extends Seeder
             $comic->series = $singleComic['series'];
             $comic->sale_date = $singleComic['sale_date'];
             $comic->type = $singleComic['type'];
-            $artists = null;
-            foreach($singleComic['artists'] as $artist){
-                $artists .='!'.$artist;
-            }
-            $comic->artists = $artists;
-            $writers = null;
-            foreach($singleComic['writers'] as $writer){
-                $writers .='!'.$writer;
-            }
-            $comic->writers = $writers;
+            $comic->artists = implode('|',$singleComic['artists']);
+            $comic->writers = implode('|',$singleComic['writers']);
+            // $artists = null;
+            // foreach($singleComic['artists'] as $artist){
+            //     $artists .='!'.$artist;
+            // }
+            // use function implode
+            // $comic->artists = $artists;
+            // $writers = null;
+            // foreach($singleComic['writers'] as $writer){
+            //     $writers .='!'.$writer;
+            // }
+            // $comic->writers = $writers;
             $comic->save();
         }
     }
